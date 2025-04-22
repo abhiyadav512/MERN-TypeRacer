@@ -51,11 +51,11 @@ const Register = () => {
       >
         {/* Logo */}
         <div className="text-center">
-          <img
+          {/* <img
             src="/path/to/your/logo.png"
             alt="Logo"
             className="h-14 mx-auto"
-          />
+          /> */}
           <h1 className="text-2xl font-bold text-lightText dark:text-darkText mt-4 transition-colors duration-300">
             Register
           </h1>

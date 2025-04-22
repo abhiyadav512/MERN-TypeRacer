@@ -44,7 +44,7 @@ function Room() {
   // Initialize Socket.IO connection
 
   useEffect(() => {
-    const newSocket = io('http://localhost:3000');
+    const newSocket = io('https://mern-typeracer.onrender.com');
     setSocket(newSocket);
     dispatch(fetchProfile());
     return () => newSocket.close();
@@ -86,7 +86,7 @@ function Room() {
   const createRoom = async () => {
     try {
       const token = localStorage.getItem('typeToken');
-      const response = await axios.post('http://localhost:3000/api/game/create',
+      const response = await axios.post('https://mern-typeracer.onrender.com/api/game/create',
         { username: profile.username },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -102,7 +102,7 @@ function Room() {
   const joinRoom = async () => {
     try {
       const token = localStorage.getItem('typeToken');
-      const response = await axios.post('http://localhost:3000/api/game/join',
+      const response = await axios.post('https://mern-typeracer.onrender.com/api/game/join',
         { roomId: joinCode, username: profile.username },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -123,7 +123,7 @@ function Room() {
       const interval = setInterval(async () => {
         try {
           const token = localStorage.getItem('typeToken');
-          const response = await axios.get(`http://localhost:3000/api/game/room/${roomCode}`,
+          const response = await axios.get(`https://mern-typeracer.onrender.com/api/game/room/${roomCode}`,
             { headers: { Authorization: `Bearer ${token}` } }
           );
           setPlayers(response.data.game.players);
@@ -141,7 +141,7 @@ function Room() {
   const startGame = async () => {
     try {
       const token = localStorage.getItem('typeToken');
-      await axios.post('http://localhost:3000/api/game/start',
+      await axios.post('https://mern-typeracer.onrender.com/api/game/start',
         {
           roomId: roomCode,
           username: profile.username
@@ -195,7 +195,7 @@ function Room() {
 
       setHasCompleted(true);
       const token = localStorage.getItem('typeToken');
-      const response = await axios.post('http://localhost:3000/api/game/end',
+      const response = await axios.post('https://mern-typeracer.onrender.com/api/game/end',
         {
           roomId: roomCode,
           stats: {
