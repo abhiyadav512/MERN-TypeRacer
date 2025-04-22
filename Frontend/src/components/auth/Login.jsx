@@ -90,11 +90,18 @@ const Login = () => {
             placeholder="Enter your email"
             className="mt-1 w-full px-4 py-1.5 bg-lightBackground dark:bg-darkBackground text-lightText dark:text-darkText border border-gray-300 dark:border-gray-700 rounded transition-colors duration-300"
           />
-          {error && error.message.includes("User not found") && (
+          {typeof error?.message === "string" && error.message.includes("User not found") && (
             <p className="text-red-500 text-sm mt-2">
               {error.message}. Please try again.
             </p>
           )}
+          
+          {typeof error?.message === "string" && error.message.includes("Invalid Password") && (
+            <p className="text-red-500 text-sm mt-2">
+              {error.message}. Please try again.
+            </p>
+          )}
+
         </div>
 
         {/* Password */}
