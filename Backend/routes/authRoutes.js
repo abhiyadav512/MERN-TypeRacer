@@ -26,9 +26,9 @@ router.get(
   (req, res) => {
     // On success, return the JWT token
     const token = req.user.token;
-    res.redirect(
-      `https://mern-type-racer.vercel.app/auth-success?token=${token}`
-    );
+     res.redirect(
+       `https://mern-type-racer.vercel.app/auth-success?token=${token}`
+     );
   }
 );
 

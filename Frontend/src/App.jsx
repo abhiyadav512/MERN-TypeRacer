@@ -7,9 +7,9 @@ import Home from "./pages/Home";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import ProtectedRoutes from "./components/auth/ProtectedRoutes";
-import AuthSuccess from "./components/auth/GoogleLoginButton";
 import Room from "./pages/Room";
 import SinglePlayer from "./pages/SinglePlayer";
+import GoogleAuthSuccess from "./components/auth/GoogleAuthSuccess";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     children: [
       { path: "/login", element: <Login /> },
       { path: "/register", element: <Register /> },
-      { path: "/auth-success", element: <AuthSuccess /> }
+      { path: "/auth-success", element: <GoogleAuthSuccess /> }
       ,
       // Protected Routes
       {
