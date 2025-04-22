@@ -6,7 +6,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "http://localhost:3000/", // Backend server URL
+        target: "https://mern-typeracer.onrender.com/", // Backend server URL
         changeOrigin: true,
         secure: false,
       },
