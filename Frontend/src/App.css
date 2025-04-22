@@ -1,0 +1,52 @@
+/* Global CSS for Calendar Component */
+
+/* Calendar container */
+.react-calendar {
+  @apply rounded-lg shadow-lg bg-white dark:bg-darkBackground p-4;
+}
+
+/* Navigation bar (month and year) */
+.react-calendar__navigation {
+  @apply flex justify-between items-center bg-gray-100 dark:bg-darkBackground p-2 rounded-lg;
+}
+
+/* Navigation buttons (next/prev month) */
+.react-calendar__navigation button {
+  @apply text-xl text-gray-700 dark:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-md p-1 transition duration-200;
+}
+
+/* Month and Year labels */
+.react-calendar__navigation__label {
+  @apply font-semibold text-lg text-gray-800 dark:text-lightBackground ;
+}
+
+/* Calendar grid days */
+.react-calendar__month-view__weekdays {
+  @apply grid grid-cols-7 text-center font-medium text-gray-600 dark:text-gray-300 mb-2;
+}
+
+/* Normal day cells */
+.react-calendar__month-view__days__day {
+  @apply p-3 text-center rounded-md cursor-pointer text-gray-800 dark:text-lightBackground hover:bg-gray-200 dark:hover:bg-gray-600 transition duration-200;
+}
+
+/* Active (selected) day */
+.react-calendar__tile--active {
+  @apply bg-darkBackground text-white font-bold dark:bg-lightBackground dark:text-black;
+}
+
+/* Today’s tile */
+.react-calendar__tile--now {
+  @apply bg-gray-400 font-bold text-slate-50 dark:bg-gray-700 dark:text-gray-100 rounded-md;
+}
+
+/* Weekend tiles (e.g., Sunday) */
+.react-calendar__month-view__days__day--weekend {
+  @apply text-red-500 font-bold dark:text-red-300;
+}
+
+/* Disabled tiles */
+.react-calendar__tile--disabled {
+  @apply text-gray-400 dark:text-gray-500 cursor-not-allowed;
+}
+
