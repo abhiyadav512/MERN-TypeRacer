@@ -11,7 +11,7 @@ const connectDB = require("./db");
 dotenv.config();
 
 // Connect to MongoDB
-// connectDB();
+connectDB();
 
 // Initialize the app
 const app = express();

@@ -8,6 +8,8 @@ const mongoURL = process.env.MONGO_URL_DEPLOY;
 mongoose.connect(mongoURL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
+  ssl: true, // <- this ensures secure TLS/SSL connection
+  tlsAllowInvalidCertificates: false, // optional
 });
 
 // get the default coo=nnection
