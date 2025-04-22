@@ -6,6 +6,7 @@ import { Timer, Type, Target, RotateCcw, Award, X } from 'lucide-react'; // Adde
 import Confetti from 'react-confetti';
 import { useWindowSize } from 'react-use';
 import { useNavigate } from 'react-router-dom'; // Added for navigation
+import mainApi from '../api/mainApi';
 
 const sampleTexts = [
     "The quick brown fox jumps over the lazy with five dozen liquor jugs thd sid",
@@ -47,7 +48,7 @@ const SinglePlayer = () => {
         setGameStats(finalStats);
         console.log(finalStats);
         try {
-            await axios.post('/api/game/single-player', finalStats);
+            await mainApi.post('/api/game/single-player', finalStats);
         } catch (err) {
             console.error('Failed to save the game result.', err);
         }

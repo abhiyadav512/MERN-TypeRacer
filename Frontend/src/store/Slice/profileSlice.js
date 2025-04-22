@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+import mainApi from "../../api/mainApi";
 
 // const baseURL = "http://localhost:3000";
 // const baseURL = import.meta.env.VITE_APP_API_URL;
@@ -9,7 +10,7 @@ export const fetchProfile = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     const token = localStorage.getItem("typeToken");
     try {
-      const response = await axios.get(`/api/users/profile`, {
+      const response = await mainApi.get(`/api/users/profile`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       return response.data;
@@ -24,7 +25,7 @@ export const fetchGameHistory = createAsyncThunk(
   async (username, { rejectWithValue }) => {
     const token = localStorage.getItem("typeToken");
     try {
-      const response = await axios.get(`/api/game/history/${username}`, {
+      const response = await mainApi.get(`/api/game/history/${username}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       return response.data;
@@ -49,7 +50,7 @@ export const updateProfile = createAsyncThunk(
     }
 
     try {
-      const response = await axios.put(`/api/users/profile`, formData, {
+      const response = await mainApi.put(`/api/users/profile`, formData, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "multipart/form-data", // Important for file uploads
