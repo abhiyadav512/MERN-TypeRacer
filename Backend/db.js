@@ -5,29 +5,28 @@ require("dotenv").config();
 const mongoURL = process.env.MONGO_URL_DEPLOY;
 
 // set up MonogDB connection (compulsary)
-mongoose.connect(mongoURL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  ssl: true, // <- this ensures secure TLS/SSL connection
-  tlsAllowInvalidCertificates: false, // optional
-});
 
-// get the default coo=nnection
-const db = mongoose.connection;
+const connectDB = async () => {
+  try {
+    await mongoose.connect(mongoURL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      ssl: true,
+      tlsAllowInvalidCertificates: false,
+    });
 
-// define event listners for database connection
+    console.log("✅ Connected to MongoDB");
+  } catch (error) {
+    console.error("❌ MongoDB connection error:", error);
+    process.exit(1);
+  }
 
-db.on("connected", () => {
-  console.log("connected to MongoDB server");
-});
+  // Event listeners
+  const db = mongoose.connection;
 
-db.on("error", (error) => {
-  console.log("some error in MongoDB", error);
-});
+  db.on("disconnected", () => {
+    console.log("⚠️ MongoDB disconnected");
+  });
+};
 
-db.on("disconnected", () => {
-  console.log("MongoDB server diconnected");
-});
-
-// export the database
-module.exports = db;
+module.exports = connectDB;

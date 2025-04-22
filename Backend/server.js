@@ -11,7 +11,7 @@ const connectDB = require("./db");
 dotenv.config();
 
 // Connect to MongoDB
-// connectDB();
+connectDB();
 
 // Initialize the app
 const app = express();
@@ -24,11 +24,17 @@ const io = new Server(httpServer, {
   },
 });
 
+app.use(
+  cors({
+    origin: "https://mern-type-racer.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    credentials: true,
+  })
+);
+
 // Middleware
 app.use(express.json());
 // app.use(cors({ origin: "http://localhost:5173" })); // Replace with your frontend URL
-app.use(cors({ origin: "https://mern-type-racer.vercel.app" })); // Replace with your frontend URL
-
 // Passport Initialization
 app.use(passport.initialize());
 require("./config/passport");
