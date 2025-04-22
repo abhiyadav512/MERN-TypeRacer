@@ -96,11 +96,7 @@ const Login = () => {
             </p>
           )}
           
-          {typeof error?.message === "string" && error.message.includes("Invalid Password") && (
-            <p className="text-red-500 text-sm mt-2">
-              {error.message}. Please try again.
-            </p>
-          )}
+         
 
         </div>
 
