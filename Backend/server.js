@@ -19,7 +19,7 @@ const httpServer = createServer(app);
 const io = new Server(httpServer, {
   cors: {
     // origin: "http://localhost:5173",
-    origin: "https://mern-type-racer.vercel.app",
+    origin: ["http://localhost:3000", "https://mern-type-racer.vercel.app"],
     methods: ["GET", "POST"],
   },
 });

@@ -4,8 +4,8 @@ import axios from "axios";
 
 // require('dotenv').config();
 
-// const baseUrl = import.meta.env.VITE_APP_API_URL;
-// const baseUrl = "http://localhost:3000";
+// const baseURL = import.meta.env.VITE_APP_API_URL;
+// const baseURL = "http://localhost:3000";
 export const loginUser = createAsyncThunk(
   "auth/loginUser",
   async (credentials, { rejectWithValue }) => {
@@ -13,7 +13,7 @@ export const loginUser = createAsyncThunk(
       const response = await axios.post(`/api/auth/login`, credentials);
       localStorage.setItem("typeToken", response.data.token);
       // console.log(response);
-      // console.log(baseUrl);
+      // console.log(baseURL);
       return response.data;
     } catch (error) {
       return rejectWithValue(error.response.data);

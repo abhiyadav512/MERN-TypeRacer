@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-// const baseUrl = "http://localhost:3000";
-// const baseUrl = import.meta.env.VITE_APP_API_URL;
+// const baseURL = "http://localhost:3000";
+// const baseURL = import.meta.env.VITE_APP_API_URL;
 
 export const fetchProfile = createAsyncThunk(
   "profile/fetchProfile",
@@ -33,8 +33,6 @@ export const fetchGameHistory = createAsyncThunk(
     }
   }
 );
-
-
 
 export const updateProfile = createAsyncThunk(
   "profile/updateProfile",
@@ -69,7 +67,7 @@ export const updateProfile = createAsyncThunk(
 //   async (_, { getState, rejectWithValue }) => {
 //     const token = getState().auth.token;
 //     try {
-//       const response = await axios.get(`${baseUrl}/api/friends`, {
+//       const response = await axios.get(`${baseURL}/api/friends`, {
 //         headers: { Authorization: `Bearer ${token}` },
 //       });
 //       return response.data;
@@ -87,7 +85,7 @@ export const updateProfile = createAsyncThunk(
 //     const token = getState().auth.token;
 //     try {
 //       const response = await axios.put(
-//         `${baseUrl}/api/friends/follow/${followId}`,
+//         `${baseURL}/api/friends/follow/${followId}`,
 //         {},
 //         {
 //           headers: { Authorization: `Bearer ${token}` },
@@ -107,7 +105,7 @@ export const updateProfile = createAsyncThunk(
 //     const token = getState().auth.token;
 //     try {
 //       const response = await axios.put(
-//         `${baseUrl}/api/friends/unfollow/${unfollowId}`,
+//         `${baseURL}/api/friends/unfollow/${unfollowId}`,
 //         {},
 //         {
 //           headers: { Authorization: `Bearer ${token}` },

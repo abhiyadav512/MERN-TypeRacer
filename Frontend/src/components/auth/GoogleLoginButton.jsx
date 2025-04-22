@@ -10,7 +10,7 @@ const GoogleLoginButton = ({ status }) => {
     // Handle the Google login redirection
     const handleGoogle = () => {
         // window.open("http://localhost:3000/api/auth/google", "_self");
-        window.open("https://mern-type-racer.vercel.app/api/auth/google", "_self");
+        window.open("https://mern-typeracer.onrender.com/api/auth/google", "_self");
 
     };
 
