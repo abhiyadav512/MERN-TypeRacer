@@ -60,7 +60,7 @@ function Home() {
           transition={{ duration: 0.5 }}
         >
           <h1 className="text-3xl md:text-6xl text-center mb-2 font-black leading-snug">
-            TypeRace
+            TypeRacer
           </h1>
           {/* <motion.div
             whileHover={{ rotate: 180 }}
@@ -130,7 +130,7 @@ function Home() {
               Climb the ranks and see how you stack up against other typers.
             </p>
           </motion.div>
-          <motion.div
+          {/* <motion.div
             whileHover={{ scale: 1.05, rotateZ: 2 }}
             className={`p-8 md:p-12  ${sharedClass}`}
           >
@@ -138,7 +138,7 @@ function Home() {
             <p>
               Track your progress with detailed statistics and performance graphs.
             </p>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
       </div>
     </motion.div>

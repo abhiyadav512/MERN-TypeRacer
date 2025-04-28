@@ -9,9 +9,16 @@ import { useNavigate } from 'react-router-dom'; // Added for navigation
 import mainApi from '../api/mainApi';
 
 const sampleTexts = [
-    "The quick brown fox jumps over the lazy with five dozen liquor jugs thd sid",
-    "Pack my box with five dozen liquor jugs thd with five dozen liquor jugs thd sid ...",
-    "How vexingly quick daft zebras jump! with five dozen liquor jugs thd sid"
+    "Symphonic quarks bewildered the xenophobic jugglers while encrypting flux matrices swiftly.",
+    "Jovially perplexed sphinxes jab quirky dwarves weaving hypnotic blizzards through zephyrs.",
+    "Quantum jackrabbits vaporized bewildering labyrinths under ultraviolet xenon-powered gazebos.",
+    "Bravely whizzing, the vixen gulped perplexing streams of ultraviolet molten jazz folklore.",
+    "Fierce mavericks chiseled through bewildering quantum puzzles with hypnotic pixelated finesse.",
+    "Zany wizards juggled vexed labyrinths beyond the flickering holographic neutron spheres.",
+    "Cryptic foxes zipped beneath luminous vortexes, baffling bewildered techno-warlocks at dawn.",
+    "Fumbling swiftly, the hypersonic koala fractured dozens of vibrant xenon-powered gizmos.",
+    "The nebulous skyline shimmered as paradoxical robots tangoed atop swirling magma lakes.",
+    "Ruthless pixelknights battled synthetic phantoms within fragmented metaverse anomalies, undeterred by chaos."
 ];
 
 
@@ -46,7 +53,7 @@ const SinglePlayer = () => {
     const handleTimeUp = async (finalStats) => {
         setGameState('finished');
         setGameStats(finalStats);
-        console.log(finalStats);
+        // console.log(finalStats);
         try {
             await mainApi.post('/api/game/single-player', finalStats);
         } catch (err) {

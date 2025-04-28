@@ -16,11 +16,11 @@ const Footer = () => {
             <img
               src="/TypeRaceLogo.svg"
               alt="Logo"
-              className="h-8 w-8 object-contain"
+              className="h-8 w-8 object-contain dark:invert"
             />
           </Link>
           <p className="text-center md:text-left text-sm">
-            TypeRace – Speed. Accuracy. Victory.
+            TypeRacer – Speed. Accuracy. Victory.
           </p>
         </div>
 
@@ -63,7 +63,7 @@ const Footer = () => {
       {/* Footer Bottom */}
       <div className="  text-center py-4">
         <p className="text-sm">
-          © {new Date().getFullYear()} TypeRace. All rights reserved.
+          © {new Date().getFullYear()} TypeRacer. All rights reserved.
         </p>
       </div>
     </footer>

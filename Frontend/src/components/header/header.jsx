@@ -29,7 +29,7 @@ const Header = () => {
     <nav className="flex items-center justify-between px-4 py-3 bg-lightBackground dark:bg-darkBackground transition-colors duration-300">
       {/* Logo */}
       <Link to="/">
-        <img src="/TypeRaceLogo.svg" alt="Logo" className="h-7 w-7 object-contain" />
+        <img src="/TypeRaceLogo.svg" alt="Logo" className="h-7 w-7 object-contain dark:invert" />
       </Link>
 
       {/* Desktop Navigation */}

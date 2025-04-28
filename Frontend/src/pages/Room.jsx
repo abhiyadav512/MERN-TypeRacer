@@ -19,10 +19,18 @@ const fadeIn = {
 const sharedClass = "bg-lightBackground dark:bg-darkBackground hover:bg-darkBackground dark:hover:bg-lightBackground text-darkBackground hover:text-lightBackground dark:text-lightBackground hover:dark:text-darkBackground border-2 border-darkBackground dark:border-lightBackground transition-colors duration-300";
 
 const sampleTexts = [
-  "The quick brown fox jumps over the lazy dog with five dozen liquor jugs",
-  "Pack my box with five dozen liquor jugs that quickly faxed wine labels",
-  "How vexingly quick daft zebras jump when boxing mixed up flags"
+  "Symphonic quarks bewildered the xenophobic jugglers while encrypting flux matrices swiftly.",
+  "Jovially perplexed sphinxes jab quirky dwarves weaving hypnotic blizzards through zephyrs.",
+  "Quantum jackrabbits vaporized bewildering labyrinths under ultraviolet xenon-powered gazebos.",
+  "Bravely whizzing, the vixen gulped perplexing streams of ultraviolet molten jazz folklore.",
+  "Fierce mavericks chiseled through bewildering quantum puzzles with hypnotic pixelated finesse.",
+  "Zany wizards juggled vexed labyrinths beyond the flickering holographic neutron spheres.",
+  "Cryptic foxes zipped beneath luminous vortexes, baffling bewildered techno-warlocks at dawn.",
+  "Fumbling swiftly, the hypersonic koala fractured dozens of vibrant xenon-powered gizmos.",
+  "The nebulous skyline shimmered as paradoxical robots tangoed atop swirling magma lakes.",
+  "Ruthless pixelknights battled synthetic phantoms within fragmented metaverse anomalies, undeterred by chaos."
 ];
+
 
 function Room() {
   const [roomCode, setRoomCode] = useState('');
