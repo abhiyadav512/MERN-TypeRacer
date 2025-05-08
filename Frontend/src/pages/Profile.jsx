@@ -30,11 +30,16 @@ const Profile = () => {
     handleCloseModal(); // Close the modal after updating
   };
 
-
   useEffect(() => {
-    dispatch(fetchProfile())
-    dispatch(fetchGameHistory(profile.username)); // Fetch user's game history based on username
-  }, [dispatch,profile.username])
+    if (!profile.username) {
+      dispatch(fetchProfile());
+    }
+
+    // Cache game history per user
+    if (profile.username && gameHistory.length === 0) {
+      dispatch(fetchGameHistory(profile.username));
+    }
+  }, [dispatch, profile.username, gameHistory.length]);
 
   return (
     <div className="my-16  text-lightText dark:text-darkText p-6 md:p-10 lg:p-16 rounded-lg  max-w-md mx-auto transition-colors duration-300">
